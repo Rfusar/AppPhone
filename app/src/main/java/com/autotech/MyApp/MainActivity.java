@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.autotech.MyApp.pages.HomeActivity;
+import com.autotech.MyApp.users.User;
 
 public class MainActivity extends AppCompatActivity {
     private String username_value;
@@ -35,17 +36,19 @@ public class MainActivity extends AppCompatActivity {
                 password_value = password.getText().toString().trim();
 
                 if(username_value.isEmpty() || password_value.isEmpty()){
-                    Toast.makeText(MainActivity.this, "Devi inserire username e password coglione", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Devi inserire username e password, stupido", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    if(username_value.equals("riccardo") && password_value.equals("admin")){
+                    User u = User.login(username_value, password_value);
+                    if (u==null){
+                        Toast.makeText(MainActivity.this, "Non ti conosco", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class); 
                         startActivity(intent);
                     }
                 }
             }
         });
-
-
     }
 }
