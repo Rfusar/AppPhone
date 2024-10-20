@@ -26,24 +26,24 @@
             android:padding="2dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:text="Contatta Amico"
+            android:text="Registro"
             android:background="@color/btn"
             android:textColor="@color/text"
             />
     
         <Button
-            android:id="@+id/Impostazioni"
+            android:id="@+id/Studio"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:padding="2dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:text="Impostazioni"
+            android:text="Calls"
             android:background="@color/btn"
             android:textColor="@color/text"
             />
-        
+
         <Button
             android:id="@+id/Profilo"
             android:layout_width="0dp"

@@ -5,10 +5,34 @@
     >
 
     <LinearLayout
+        android:id="@+id/rowAPI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        >
+        <TextView
+            android:id="@+id/setting_api"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            />
+
+        <Button
+            android:id="@+id/ModifyAPI"
+            android:text="Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/rowPrivate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_below="@id/rowAPI"
         android:padding="16dp"
         >
         <Switch
@@ -20,13 +44,32 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/rowNotif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/rowPrivate"
+        android:padding="16dp"
+        >
+        <Switch
+            android:id="@+id/setting_notif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Abilita Notifiche"
+            />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/setting_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rowPrivate"
+        android:layout_below="@id/rowNotif"
         android:layout_centerInParent="true"
         android:textSize="12sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
         />
 
     <TextView
@@ -36,6 +79,7 @@
         android:layout_below="@id/setting_username"
         android:layout_centerInParent="true"
         android:textSize="9sp"
+        android:layout_marginLeft="10dp"
         />
 
 

@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.autotech.MyApp.users.User;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ChatActivity extends AppCompatActivity {
+    private User currentUser;
     
     private LinearLayout Friends_container;
 
@@ -18,15 +20,12 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+        
+        currentUser = (User) getIntent().getSerializableExtra("User");
 
         Friends_container = findViewById(R.id.Friends);
 
-        String[] items = {
-            "Riccardo Fusaro",
-            "Lorenzo Apa",
-            "Manuel Sgura"
-        };
-        for(String i : items){addRow(i);}
+        for(String i : currentUser.getFriends()){addRow(i);}
 
     }
 

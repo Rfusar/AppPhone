@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.app.NotificationManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.autotech.MyApp.pages.HomeActivity;
@@ -45,10 +46,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class); 
+                        intent.putExtra("User", u);
                         startActivity(intent);
                     }
                 }
             }
         });
+
     }
+
 }
