@@ -66,4 +66,23 @@ public class Notifica {
             nm.notify(1, builder.build());
         }
     }
+
+    public static void sendNotif(Context c, String title, String content){
+        String channelId = "my_channel_id";
+        NotificationManager nm = (NotificationManager) c.getSystemService(Context.NOTIFICATION_SERVICE);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel(channelId, "My Channel", NotificationManager.IMPORTANCE_DEFAULT);
+            nm.createNotificationChannel(channel);
+
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(c, channelId)
+            .setSmallIcon(R.drawable.icon_app)
+            .setContentTitle(title)
+            .setContentText(content)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setAutoCancel(true);
+
+        nm.notify(1, builder.build());
+    }
 }

@@ -24,6 +24,7 @@ public class SettingsActivity extends AppCompatActivity {
     private TextView span_1;
     private Switch is_private;
     private Switch is_notif;
+    private Switch is_backup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -40,6 +41,17 @@ public class SettingsActivity extends AppCompatActivity {
             }
             else{
                 Toast.makeText(this, "Ora non sei privato", Toast.LENGTH_SHORT).show();
+            }
+        });
+        //set backup 
+        is_backup = findViewById(R.id.setting_backup);
+        is_backup.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked){
+                Notifica.sendNotif(this, "Notifica personalizzata", "hahahaha");
+                Toast.makeText(this, "Backup attivato", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Toast.makeText(this, "Backup disattivato", Toast.LENGTH_SHORT).show();
             }
         });
         //set notif

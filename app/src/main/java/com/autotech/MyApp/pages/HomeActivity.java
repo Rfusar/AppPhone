@@ -19,16 +19,17 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        User u = (User) getIntent().getSerializableExtra("User");
 
         Button b_Chat = findViewById(R.id.Chat);
         b_Chat.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, ChatActivity.class);
+            intent.putExtra("User", u);
             startActivity(intent);
         });
 
         Button b_Profilo = findViewById(R.id.Profilo);
         b_Profilo.setOnClickListener(v -> {
-           User u = (User) getIntent().getSerializableExtra("User");
            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
            intent.putExtra("User", u);
            startActivity(intent);
@@ -36,7 +37,6 @@ public class HomeActivity extends AppCompatActivity {
         
         Button b_Studio = findViewById(R.id.Studio);
         b_Studio.setOnClickListener(v -> {
-           User u = (User) getIntent().getSerializableExtra("User");
            Intent intent = new Intent(HomeActivity.this, StudioActivity.class);
            intent.putExtra("User", u);
            startActivity(intent);

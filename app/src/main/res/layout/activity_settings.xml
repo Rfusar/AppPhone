@@ -61,11 +61,28 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/rowBackup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/rowNotif"
+        android:padding="16dp"
+        >
+        <Switch
+            android:id="@+id/setting_backup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Abilita Backup"
+            />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/setting_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rowNotif"
+        android:layout_below="@id/rowBackup"
         android:layout_centerInParent="true"
         android:textSize="12sp"
         android:layout_marginLeft="10dp"

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.autotech.MyApp.pages.HomeActivity;
 import com.autotech.MyApp.users.User;
+import com.autotech.MyApp.users.DB;
 
 public class MainActivity extends AppCompatActivity {
     private String username_value;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         EditText username = findViewById(R.id.Username);
         EditText password = findViewById(R.id.Password);
         Button btn = findViewById(R.id.sendLogin);
+
+        DB.saveData(MainActivity.this);
 
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
